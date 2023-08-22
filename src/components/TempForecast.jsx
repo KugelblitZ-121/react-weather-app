@@ -30,25 +30,13 @@ function TempForecast() {
               className={`relative grid grid-cols-2 px-6 py-4 justify-items-center content-center ${
                 element.weather[0].main === "Clear"
                   ? "bg-yellow-300"
-                  : element.weather[0].main === "Clouds"
-                  ? "bg-sky-200"
+                  : element.weather[0].main === "Clouds" || element.weather[0].main === "Snow"
+                  ? "bg-sky-100"
                   : "bg-sky-900"
               }`}
             >
               <img
-                src={`${
-                  element.weather[0].main === "Clear"
-                    ? "/react-weather-app/src/assets/animated/cloudy-day-3.svg"
-                    : element.weather[0].main === "Clouds"
-                    ? "src/assets/animated/cloudy-day-3.svg"
-                    : element.weather[0].main === "Rain"
-                    ? "src/assets/animated/rainy-3.svg"
-                    : element.weather[0].main === "Snow"
-                    ? "src/assets/animated/snowy-6.svg"
-                    : element.weather[0].main === "Thunderstorm"
-                    ? "src/assets/animated/thunder.svg"
-                    : "src/assets/animated/snowy-1.svg"
-                }`}
+                src={`https://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png`}
                 width="100%"
                 height="100%"
                 className="p-0 m-0"
