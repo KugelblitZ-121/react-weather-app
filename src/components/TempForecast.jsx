@@ -38,16 +38,16 @@ function TempForecast() {
               <img
                 src={`${
                   element.weather[0].main === "Clear"
-                    ? "/src/assets/animated/day.svg"
+                    ? "src/assets/animated/day.svg"
                     : element.weather[0].main === "Clouds"
-                    ? "/src/assets/animated/cloudy-day-3.svg"
+                    ? "src/assets/animated/cloudy-day-3.svg"
                     : element.weather[0].main === "Rain"
-                    ? "/src/assets/animated/rainy-3.svg"
+                    ? "src/assets/animated/rainy-3.svg"
                     : element.weather[0].main === "Snow"
-                    ? "/src/assets/animated/snowy-6.svg"
+                    ? "src/assets/animated/snowy-6.svg"
                     : element.weather[0].main === "Thunderstorm"
-                    ? "/src/assets/animated/thunder.svg"
-                    : "/src/assets/animated/snowy-1.svg"
+                    ? "src/assets/animated/thunder.svg"
+                    : "src/assets/animated/snowy-1.svg"
                 }`}
                 width="100%"
                 height="100%"
