@@ -38,7 +38,7 @@ function TempForecast() {
               <img
                 src={`${
                   element.weather[0].main === "Clear"
-                    ? "https://kugelblitz-121.github.io/react-weather-app/src/assets/animated/cloudy-day-3.svg"
+                    ? "/react-weather-app/src/assets/animated/cloudy-day-3.svg"
                     : element.weather[0].main === "Clouds"
                     ? "src/assets/animated/cloudy-day-3.svg"
                     : element.weather[0].main === "Rain"
