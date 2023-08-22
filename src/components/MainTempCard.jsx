@@ -45,7 +45,7 @@ export default function MainTempCard() {
                 <CiTempHigh />
                 <span className="ml-1">Feels like</span>
               </span>
-              <span>{toCil(tempData.main.feels_like + 1)}&deg;</span>
+              <span>{toCil(tempData.main.feels_like)}&deg;</span>
             </div>
             <div className="flex justify-between px-7 text-white">
               <span className="flex flex-row items-center">

@@ -26,14 +26,12 @@ const SearchProvider = ({ children }) => {
       const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=83f967263606a2a4c4d3a5ab3ade2639`
       );
-      //console.log(response);
       setCity(response.data.name);
       setTempData(response.data);
       getForcast(city);
     } catch (err) {
       setTempData(null);
       setErrorMsg(err.response.data.message);
-      console.log(err);
     }
     setIsLoading(false);
   };
@@ -50,8 +48,6 @@ const SearchProvider = ({ children }) => {
         }
       });
       setForcastData(temp.slice(0, 32));
-      //setForcastData(response.data.list);
-      //console.log(response);
     } catch (err) {
       console.log(err);
     }

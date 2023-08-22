@@ -3,15 +3,15 @@ import { SearchContext } from "../API/search-api";
 
 function TempForecast() {
   const { forcastData, toCil, tempData } = useContext(SearchContext);
-  const startingIndex = 4;
-  const skipCount = 8;
 
   const forcastDataArray = [];
-  for (let i = startingIndex; i < forcastData.length; i += skipCount) {
+  const lowTempArray = [];
+  for (let i = 4; i < forcastData.length; i += 8) {
     forcastDataArray.push(forcastData[i]);
   }
-  console.log(forcastDataArray);
-
+  for (let i = 1; i < forcastData.length; i += 8) {
+    lowTempArray.push(forcastData[i]);
+  }
   const [futureDays, setFutureDays] = useState([]);
   useEffect(() => {
     const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -31,8 +31,8 @@ function TempForecast() {
                 element.weather[0].main === "Clear"
                   ? "bg-yellow-300"
                   : element.weather[0].main === "Clouds" || element.weather[0].main === "Snow"
-                  ? "bg-sky-100"
-                  : "bg-sky-900"
+                  ? "bg-sky-200"
+                  : "bg-sky-800"
               }`}
             >
               <img
@@ -42,7 +42,12 @@ function TempForecast() {
                 className="p-0 m-0"
               />
 
-              <span className="font-bold text-4xl flex items-center">{toCil(element.main.temp_max)}&deg;</span>
+              {/* <span className="font-bold text-4xl flex items-center">H: {toCil(element.main.temp_max)}&deg;</span> */}
+              <div className="flex flex-col justify-center items-center px-7 font-bold text-xl">
+                <span>H: {toCil(element.main.temp_max)}&deg;</span>
+
+                <span>L: {toCil(lowTempArray[index].main.temp_min)}&deg;</span>
+              </div>
             </div>
             <div className="pt-4 pb-4 text-center text-2xl text-white">
               <span>{futureDays[index]}</span>
