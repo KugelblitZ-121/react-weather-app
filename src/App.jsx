@@ -14,6 +14,7 @@ function App() {
         {!isLoading ? (
           <div className="w-full">
             <MainTempCard></MainTempCard>
+
             <TempForecast></TempForecast>
           </div>
         ) : (

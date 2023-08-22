@@ -44,22 +44,8 @@ function TempForecast() {
               />
 
               {/* <span className="font-bold text-4xl flex items-center">H: {toCil(element.main.temp_max)}&deg;</span> */}
-              <div className="flex flex-col justify-center items-center px-7 font-bold text-xl">
-                <span>
-                  H:{" "}
-                  {toCil(element.main.temp_max) > toCil(lowTempArray[index].main.temp_min)
-                    ? toCil(element.main.temp_max)
-                    : toCil(lowTempArray[index].main.temp_min)}
-                  &deg;
-                </span>
-
-                <span>
-                  L:{" "}
-                  {toCil(lowTempArray[index].main.temp_min) < toCil(element.main.temp_max)
-                    ? toCil(lowTempArray[index].main.temp_min)
-                    : toCil(element.main.temp_max)}
-                  &deg;
-                </span>
+              <div className="flex flex-col justify-center items-center px-7 font-bold text-4xl">
+                <span>{toCil(element.main.temp_max)}&deg;</span>
               </div>
             </div>
             <div className="pt-4 pb-4 text-center text-2xl text-white">
