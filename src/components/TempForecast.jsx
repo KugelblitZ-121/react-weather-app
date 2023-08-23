@@ -24,8 +24,7 @@ function TempForecast() {
     maxTemps.push(maxTemp);
     minTemps.push(minTemp);
   }
-  //console.log(minTemps);
-  console.log(forcastData);
+
   const [futureDays, setFutureDays] = useState([]);
   useEffect(() => {
     const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -34,7 +33,6 @@ function TempForecast() {
     const futureDayNames = dayNames.slice(currentDayIndex + 1).concat(dayNames.slice(0, currentDayIndex));
     setFutureDays(futureDayNames);
   }, []);
-  //console.log(forcastData);
   return (
     <div className="flex flex-wrap justify-center mt-5">
       {forcastData &&
