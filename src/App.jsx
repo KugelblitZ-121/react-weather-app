@@ -8,7 +8,7 @@ function App() {
   const { isLoading } = useContext(SearchContext);
   return (
     <div className="">
-      <h1 className="text-3xl text-center m-10">Welcome to my weather app. Designed by KugelblitZ</h1>
+      <h1 className="text-3xl text-center m-7">Welcome to my weather app. Designed by KugelblitZ</h1>
       <div className="flex flex-col items-center">
         <SearchBar></SearchBar>
         {!isLoading ? (
